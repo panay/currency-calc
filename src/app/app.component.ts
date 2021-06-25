@@ -33,7 +33,6 @@ export class AppComponent implements OnInit, OnDestroy {
     const selectedCart: Price[] = this.$selectedCart.getValue();
 
     this.subs = this.service.getCurrency(currency).subscribe((result: number) => {
-      const num = Math.round((result + Number.EPSILON) * 100) / 100
       this.$selectedCart.next(selectedCart.reduce((acc: Price[], cur: Price): Price[] => {
         return acc.concat({price: +(cur.price *= result).toFixed(2)});
       }, [] as Price[]));
