@@ -16,29 +16,29 @@ export class CurrencyFormComponent implements OnDestroy {
     label: string;
   }[] = [
     {
-      value: 'dollars',
+      value: 'USD',
       label: '$'
     },
     {
-      value: 'euros',
+      value: 'EUR',
       label: '€'
     },
     {
-      value: 'rubles',
+      value: 'RUB',
       label: '₽'
     },
     {
-      value: 'pounds',
+      value: 'GBP',
       label: '£'
     },
     {
-      value: 'yens',
+      value: 'JPY',
       label: '¥'
     }
   ];
 
   currencyForm: FormGroup = this.fb.group({
-    currency: 'euros'
+    currency: 'USD'
   });
 
   private subs$: Subscription = new Subscription();

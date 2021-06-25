@@ -1,6 +1,8 @@
 <div>
   <app-currency-form (onChange)="changeCurrency($event)"></app-currency-form>
-  <div>
+  <ul>
+    <li *ngFor="let cartPrice of $selectedCart | async">{{cartPrice.price}}</li>
+  </ul>
 
-  </div>
+  <h2>Общая цена: {{commonPrice}}</h2>
 </div>
